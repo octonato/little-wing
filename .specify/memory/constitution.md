@@ -1,18 +1,15 @@
 <!--
   Sync Impact Report
   ==================
-  Version change: 0.0.0 → 1.0.0 (MAJOR — initial adoption)
-  Modified principles: N/A (first version)
+  Version change: 1.0.0 → 1.1.0 (MINOR — added TypeScript mandate)
+  Modified principles: None renamed
   Added sections:
-    - Core Principles (5 principles)
-    - Code Quality Standards
-    - Development Workflow
-    - Governance
+    - "Language & Type Safety" subsection in Code Quality Standards
   Removed sections: None
   Templates requiring updates:
-    - .specify/templates/plan-template.md — ✅ no update needed (Constitution Check is generic)
-    - .specify/templates/spec-template.md — ✅ no update needed (requirements structure compatible)
-    - .specify/templates/tasks-template.md — ✅ no update needed (phase structure compatible)
+    - .specify/templates/plan-template.md — ✅ no update needed (Language/Version is a fill-in field)
+    - .specify/templates/spec-template.md — ✅ no update needed
+    - .specify/templates/tasks-template.md — ✅ no update needed
   Follow-up TODOs: None
 -->
 
@@ -67,6 +64,17 @@ Code MUST be structured so that each unit of responsibility can be tested in iso
 
 ## Code Quality Standards
 
+### Language & Type Safety
+
+All production and test code MUST be written in **TypeScript**.
+
+- `strict` mode MUST be enabled in `tsconfig.json` — no implicit `any`.
+- Use of `any` MUST be justified with an inline comment and treated as tech debt.
+- Type assertions (`as`) MUST be minimized; prefer type guards and narrowing.
+- JavaScript files (`.js`) MUST NOT be added to the repository except for generated build output and configuration files that do not support TypeScript (e.g., legacy config formats).
+
+### General Standards
+
 - Functions SHOULD be short enough to fit on one screen (~30 lines). Longer functions MUST be justified.
 - Nesting depth beyond 2 levels MUST trigger extraction into a named helper.
 - Dead code, commented-out code, and TODO comments without linked issues MUST be removed before merge.
@@ -86,4 +94,4 @@ This constitution is the authoritative source for code quality and design standa
 - **Versioning**: MAJOR for principle removals or redefinitions, MINOR for new principles or expanded guidance, PATCH for wording and clarification fixes.
 - **Compliance**: Code reviews MUST include a constitution compliance check. Violations MUST be resolved before merge or explicitly documented with justification.
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-09 | **Last Amended**: 2026-03-09
+**Version**: 1.1.0 | **Ratified**: 2026-03-09 | **Last Amended**: 2026-03-09
