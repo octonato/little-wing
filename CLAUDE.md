@@ -3,6 +3,7 @@
 Auto-generated from all feature plans. Last updated: 2026-03-09
 
 ## Active Technologies
+- TypeScript 5.x (strict mode, per constitution) + Bun (bundler + package manager), Biome (linting + formatting), chrome-types (Chrome API types) (002-floating-link-preview)
 
 - TypeScript 5.x (strict mode, per constitution) + Bun (bundler + package manager), Biome (linting + formatting), @anthropic/chrome-types (Chrome API types) (001-chrome-extension)
 
@@ -22,6 +23,7 @@ npm test && npm run lint
 TypeScript 5.x (strict mode, per constitution): Follow standard conventions
 
 ## Recent Changes
+- 002-floating-link-preview: Added TypeScript 5.x (strict mode, per constitution) + Bun (bundler + package manager), Biome (linting + formatting), chrome-types (Chrome API types)
 
 - 001-chrome-extension: Added TypeScript 5.x (strict mode, per constitution) + Bun (bundler + package manager), Biome (linting + formatting), @anthropic/chrome-types (Chrome API types)
 

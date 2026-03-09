@@ -11,6 +11,7 @@ mkdirSync(distDir, { recursive: true });
 const entrypoints = [
 	resolve(rootDir, "src/popup/popup.ts"),
 	resolve(rootDir, "src/background/service-worker.ts"),
+	resolve(rootDir, "src/content/content.ts"),
 ];
 
 if (isProduction) {
