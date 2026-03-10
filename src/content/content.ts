@@ -43,10 +43,22 @@ document.addEventListener(
 // --- Popup window behavior: Esc to close + promote toolbar ---
 
 function setupPopupControls(): void {
-	// Esc to close
+	const isMac = navigator.platform.includes("Mac");
+	let isPromoting = false;
+
+	// Esc to close, Cmd+T / Ctrl+T to promote to tab
 	document.addEventListener("keydown", (event: KeyboardEvent) => {
 		if (event.key === "Escape") {
 			const msg: ClosePopupRequest = { type: "CLOSE_POPUP" };
+			chrome.runtime.sendMessage(msg);
+			return;
+		}
+
+		const modifierPressed = isMac ? event.metaKey : event.ctrlKey;
+		if (event.key === "t" && modifierPressed && !isPromoting) {
+			event.preventDefault();
+			isPromoting = true;
+			const msg: PromoteToTabRequest = { type: "PROMOTE_TO_TAB" };
 			chrome.runtime.sendMessage(msg);
 		}
 	});
