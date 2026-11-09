@@ -5,6 +5,7 @@
   "description": "Little Wing Chrome Extension",
   "permissions": [
     "activeTab",
+    "storage",
     "tabs"
   ],
   "action": {

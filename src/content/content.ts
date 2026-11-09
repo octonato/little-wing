@@ -55,7 +55,12 @@ function setupPopupControls(): void {
 			event.preventDefault();
 			isPromoting = true;
 			const msg: PromoteToTabRequest = { type: "PROMOTE_TO_TAB" };
-			chrome.runtime.sendMessage(msg);
+			chrome.runtime
+				.sendMessage(msg)
+				.catch((error) => console.warn("Little Wing: promote failed", error))
+				.finally(() => {
+					isPromoting = false;
+				});
 		} else {
 			const msg: ClosePopupRequest = { type: "CLOSE_POPUP" };
 			chrome.runtime.sendMessage(msg);
