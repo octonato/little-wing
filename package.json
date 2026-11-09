@@ -1,6 +1,6 @@
 {
   "name": "little-wing",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Little Wing Chrome Extension",
   "type": "module",
   "scripts": {
